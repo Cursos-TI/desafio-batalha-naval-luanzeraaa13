@@ -2,7 +2,8 @@
 int main(){
 
 //matriz do campo da batalha naval
-    
+int coluna;
+
 int area [10][10] = {
     {0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 },
     {0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 },
@@ -16,17 +17,29 @@ int area [10][10] = {
     {0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 }
 
 };
-
+printf("Bem vindo a Batalha naval \n");
+printf("Digite um numero de 1 a 10 para a coluna que ficara o seu navio \n");
+scanf("%d", &coluna);
 // loop que faz aparecer o primeiro navio na vertical
+coluna--;
 
-for (int i = 1; i < 4; i++)
+if (coluna > 0 && coluna < 9)
+{
+  for (int i = 1; i < 4 ; i++)
 {
     for (int j = 1; j < 3; j++)
     {
-        area [i][2] ++;
+        area [i][coluna] ++;
     }
-    area[i][2] ++;
+    area[i][coluna] ++;
 }
+}
+else{
+    printf("A coluna esta fora do campo de batalha \n");
+}
+
+
+
 
 // loop que faz o segundo navio aparecer na horizontal
 
@@ -54,4 +67,4 @@ printf("9  %d %d %d %d %d %d %d %d %d %d \n", area[8][0], area[8][1], area[8][2]
 printf("10 %d %d %d %d %d %d %d %d %d %d \n", area[9][0], area[9][1], area[9][2], area[9][3], area[9][4], area[9][5], area[9][6], area[9][7], area[9][8], area[9][9]);
    
 return 0;
-}
+}  
